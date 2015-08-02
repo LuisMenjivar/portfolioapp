@@ -80,7 +80,7 @@ Rails.application.configure do
 
   
   #PRODUCTION DEFAULT URL OPTIONS FOR DEVISE MAILER
+  config.action_mailer.perform_deliveries = true
   config.action_mailer.default_url_options = { host: 'luisportfolioapp.herokuapp.com' }
-
 
 end
