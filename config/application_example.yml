@@ -1,0 +1,11 @@
+# THE FIGARO GEM GENERATES A FILE NAMED application.ym WHICH I KEEP SECRET FROM THE PUBLIC REPOSITORY
+
+#Example:
+# user_name: "very_long_user_name!!@$#!@$#$"
+# password: "long_password_7381a978f7dd7f9a1117" 
+
+
+# Wherever you want to use the user_name or password
+# ENV["user_name"]
+# ENV["password"]
+
