@@ -1,7 +1,8 @@
 # This file is copied to spec/ when you run 'rails generate rspec:install'
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../../config/environment', __FILE__)
-require_relative './support/email_spec_config.rb'
+require_relative './support/email_spec_config.rb'# include email_spec configuration file
+require_relative './support/devise_config.rb' # Manual sign in and sign up methods for feature specs
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'spec_helper'

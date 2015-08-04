@@ -50,17 +50,17 @@
           <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
-              <%= f.email_field :email, autofocus: true, :placeholder => "Email", class: "form-control"  %>
+              <%= f.email_field :email, autofocus: true, :placeholder => "Email", class: "form-control", id: "sign_up_email"  %>
             </div>
           </div>
           <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Password</label>
             <div class="col-lg-10">
-              <%= f.password_field :password, autocomplete: "off", class: "form-control", :placeholder => "#{@minimum_password_length} characters minimum" if (@minimum_password_length) %>
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", id: "sign_up_user_password", :placeholder => "#{@minimum_password_length} characters minimum" if (@minimum_password_length) %>
             </div>
             <label for="inputPassword" class="col-lg-2 control-label">Password</label>
             <div class="col-lg-10">
-              <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control",:placeholder => "re enter password"  %>
+              <%= f.password_field :password_confirmation, autocomplete: "off", id: "sign_up_user_password_confirmation", class: "form-control",:placeholder => "re enter password"  %>
             </div>
           </div>
           <div class="form-group">
@@ -78,4 +78,4 @@
 <a href="/users/confirmation/new" class="label label-danger">Didn't Receive confirmation instructions?</a></br>
 
 
-
+<H1>REGsign up </h1>
