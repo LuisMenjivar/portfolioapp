@@ -19,13 +19,13 @@
           <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
-              <%= f.email_field :email, autofocus: true,  value: "standard@example.com", class: "form-control" %>
+              <%= f.email_field :email, autofocus: true,  value: "standard@example.com", class: "form-control", id: "sign_in_email" %>
             </div>
           </div>
           <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Password</label>
             <div class="col-lg-10">
-              <%= f.password_field :password, autocomplete: "off", value: "helloworld", class: "form-control"%>
+              <%= f.password_field :password, autocomplete: "off", value: "helloworld", class: "form-control", id: "sign_in_user_password" %>
               <div class="checkbox">
                 <label>
                   <input type="checkbox"> Remember Me
@@ -76,6 +76,3 @@
 </div>
 <a href="/users/password/new" class="label label-danger">Forgot your Password?</a></br>
 <a href="/users/confirmation/new" class="label label-danger">Didn't Receive confirmation instructions?</a></br>
-
-
-<H1>REGsign up </h1>
