@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150804215731) do
+ActiveRecord::Schema.define(version: 20150805182944) do
 
   create_table "todos", force: :cascade do |t|
     t.string   "description"
@@ -43,5 +43,15 @@ ActiveRecord::Schema.define(version: 20150804215731) do
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "wikies", force: :cascade do |t|
+    t.string   "title"
+    t.text     "body"
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "wikies", ["user_id"], name: "index_wikies_on_user_id"
 
 end

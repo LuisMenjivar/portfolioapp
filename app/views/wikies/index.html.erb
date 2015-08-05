@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Wikies</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @wikies.each do |wiky| %>
+      <tr>
+        <td><%= wiky.title %></td>
+        <td><%= wiky.body %></td>
+        <td><%= link_to 'Show', wiky %></td>
+        <td><%= link_to 'Edit', edit_wiky_path(wiky) %></td>
+        <td><%= link_to 'Destroy', wiky, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Wiky', new_wiky_path %>
