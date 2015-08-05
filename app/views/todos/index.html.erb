@@ -15,11 +15,12 @@
           <% @todos.each do |todo|%>
             <% color = ["info", "warning", "success", "danger", "active"] %>
             <tr class = <%= color[(@todos.index(todo))%5] %> >
-              <td><%= @todos.index(todo) + 1%>.<%= todo.description %></td>   
+              <td><h4><%= @todos.index(todo) + 1%>.<%= todo.description %><h4></td>   
               <td>
-              5 days
+              <%= days_left_to_complete(todo) %>
+              
               <div class="progress progress-striped active">
-                <div class="progress-bar" style="width: 50%;"></div>
+                <div class="progress-bar" style="width: <%= percentage_to_complete(todo) %>;"></div>
               </div>        
               </td>
               <td align="right">

@@ -11,8 +11,6 @@ describe "delete_items rake task " do
     expect(todo1.reload.persisted?).to eql(true)
     Rake::Task['delete_items'].invoke
     expect(Todo.all.count).to eql(0)
-    expect{todo1.reload.persisted?}.to raise_error(ActiveRecord::RecordNotFound)
-    
+    expect{todo1.reload.persisted?}.to raise_error(ActiveRecord::RecordNotFound) 
   end
-
 end

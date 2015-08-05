@@ -5,7 +5,6 @@ class TodosController < ApplicationController
     @todos = current_user.todos.all
     @todo = Todo.new
   end
-
   
   def create
     @todo = current_user.todos.create(todo_params)
