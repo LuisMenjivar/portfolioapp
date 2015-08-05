@@ -1,0 +1,24 @@
+<div class="row">
+  <div class="form-group">
+    <div class="col-lg-8">
+          <%= form_for @todo do |form| %>
+          <div class="input-group">
+            <span class="input-group-addon"></span>
+            <%= form.text_field :description, placeholder: 'Type Todo Item Here', class: "form-control", id: "description"%>
+            <span class="input-group-btn">
+              <%= form.submit 'save', class: "btn btn-primary" %>
+            </span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 
+    
+
+      
+  
+
+
