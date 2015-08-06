@@ -5,7 +5,7 @@ class WikiesController < ApplicationController
     @featured_wiky = Wiky.last
   end
   def privatewikies
-      
+    @collaborations = Collaboration.where(user: current_user)
   end
   private
     def wiky_params
