@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806200005) do
+ActiveRecord::Schema.define(version: 20150806200536) do
 
   create_table "collaborations", force: :cascade do |t|
     t.integer  "wiky_id"
