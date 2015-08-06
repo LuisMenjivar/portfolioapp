@@ -11,4 +11,9 @@ feature 'Standard user' do
     expect(page).to have_text(@wiki.title)
     expect(page).to have_text(@wiki.body)
   end
+
+  scenario "user visits private wiky" do 
+    visit('privatewikies_path')
+    expect(page).to have content("Private Wikies")
+  end
 end

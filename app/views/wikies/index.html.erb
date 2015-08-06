@@ -1,39 +1,21 @@
-
-<div class="row">
-  <div class= "col-sm-2 zeropad" >
-    <form class="navbar-form navbar-left" role="search">
-      <div class="form-group">
-        <input type="text" class="form-control" placeholder="Search for a wiky">
+<div class= "col-sm-10">
+  <div class="list-group">
+    <div class="list-group-item">
+      <div class="list-group">
+        <div href="#" class="list-group-item">
+          <blockquote>
+          <p>“Intelligence is not the ability to store information, but to know where to find it.”</p>
+          <small>Albert Einstein<cite title="Source Title"></cite></small>
+          </blockquote>
+        </div>
       </div>
-      <button type="submit" class="btn btn-primary">Submit</button>
-    </form>
-    <ul class="nav nav-pills nav-stacked">
-      <li><a href="#">Public Wikies</a></li>
-      <li><a href="#">Private Wikies</a></li>
-      <li><a href="#">Create a Wiky</a></li>
-      
-    </li>
-    </ul>
-  </div>
-  <div class= "col-sm-10">
-    <div class="list-group">
-      <div class="list-group-item">
         <div class="list-group">
           <div href="#" class="list-group-item">
-            <blockquote>
-            <p>“Intelligence is not the ability to store information, but to know where to find it.”</p>
-            <small>Albert Einstein<cite title="Source Title"></cite></small>
-            </blockquote>
+            <h1>Featured Wiky</h1>
+            <h3><%=  @featured_wiky.title %></h3>
+            <%= raw( @featured_wiky.body) %>
           </div>
         </div>
-          <div class="list-group">
-            <div href="#" class="list-group-item">
-              <h1>Featured Wiky</h1>
-              <h3><%=  @featured_wiky.title %></h3>
-              <%= raw( @featured_wiky.body) %>
-            </div>
-          </div>
-        </div>
-    </div>
+      </div>
   </div>
 </div>

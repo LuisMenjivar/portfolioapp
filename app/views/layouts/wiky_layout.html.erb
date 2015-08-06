@@ -1,0 +1,21 @@
+<% content_for :content do %>
+  <div class="row">
+    <div class= "col-sm-2 zeropad" >
+      <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search for a wiky">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#">Public Wikies</a></li>
+        <li><a href="/privatewikies">Private Wikies</a></li>
+        <li><a href="#">Create a Wiky</a></li>
+        
+      </li>
+      </ul>
+    </div>
+      <%= content_for?(:news_content) ? yield(:news_content) : yield %>
+      <% end %>
+  </div>  
+<%= render template: "layouts/application" %>
