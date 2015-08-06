@@ -5,6 +5,7 @@ feature 'Standard user' do
     @standard_user = create(:user)
     sign_in(@standard_user.email, @standard_user.password)
     @wiky = create(:wiky, user: @standard_user, title: "Valid Title")
+    @collaboration = Collaboration.create(user: @standard_user, wiky: @wiky)
   end
   scenario "Standard user views wikies index" do  
     visit wikies_path
@@ -19,9 +20,14 @@ feature 'Standard user' do
   end
 
   scenario "standard user can see wikies he/she can collaborate on" do 
-    Collaboration.create(user: @standard_user, wiky: @wiky)
     visit('/privatewikies')
     expect(page).to have_content(@wiky.reload.title)
     puts current_path
+  end
+
+  scenario "standard user visits siky show" do 
+    visit('wiky#{@wiky.id}')
+    expect(page).to have_text(@wiky.user)
+    expect(page).to have_text(@wiky.collaboration.user)
   end
 end

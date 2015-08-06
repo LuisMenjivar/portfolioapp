@@ -7,6 +7,9 @@ class WikiesController < ApplicationController
   def privatewikies
     @collaborations = Collaboration.where(user: current_user)
   end
+  def show 
+    @wiky = Wiky.find(params[:id])
+  end
   private
     def wiky_params
       params[:wiky]
