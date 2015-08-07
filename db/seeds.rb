@@ -21,7 +21,7 @@ test_user.save
 end
 users = User.all
 
-50.times do
+10.times do
   wiky = Wiky.new(
     title:  Faker::Company.bs,
     body:   Faker::Hacker.say_something_smart,
@@ -29,8 +29,10 @@ users = User.all
   )
   wiky.update_attributes(user: users.sample)
   wiky.save
+  Collaboration.create(user: users.sample, wiky: wiky)
 end
 
 puts "DATABASE HAS BEEN SEEDED!!"
 puts "#{users.count} Users were created"
 puts "#{Wiky.all.count} Wikiess were created"
+puts "#{Collaboration.all.count} Collaborations were created"
