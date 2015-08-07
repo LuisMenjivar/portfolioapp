@@ -24,6 +24,19 @@ class WikiesController < ApplicationController
       render :edit
     end
   end
+  def new
+    @wiky = Wiky.new
+  end
+  def create
+    wiky = current_user.wikies.new(wiky_params)
+    if  wiky.save
+      flash[:notice] = "You successfully created a wiky"
+      redirect_to [wiky]
+    else
+      flash[:error] = "Error creating Wiky"
+      redirect_to :new
+    end
+  end
   private
     def wiky_params
       params.require(:wiky).permit(:title, :body, :user_id, :public)

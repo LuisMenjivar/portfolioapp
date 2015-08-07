@@ -40,4 +40,15 @@ feature 'Standard user' do
     expect(current_path).to eq(wiky_path(@wiky))
     expect(page).to have_text("this is the new title")
   end
+
+  scenario "standard user creates a wiky" do 
+    visit wikies_path
+    click_link( "Create a Wiky")
+    expect(current_path).to eq(new_wiky_path)
+    fill_in "wiky_title", with: "new wiky title"
+    fill_in "wiky_body", with: "new wiky body"
+    click_button("Create Wiky")
+    expect(current_path).to eq(wiky_path("#{Wiky.last.id}"))
+    expect(page).to have_text("new wiky title")
+  end
 end
