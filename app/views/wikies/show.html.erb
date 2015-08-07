@@ -1,0 +1,27 @@
+<div class="row">
+  <div class = "col-lg-12" >
+    <h5 class= "floatleft" ><%= @wiky.title %></h5>[<%= link_to "edit", edit_wiky_path(@wiky) %>]
+  </div>
+</div> <!-- buttons row  -->
+<div class="row">
+  <div class="col-lg-12">
+    <ul class="list-group">
+      <p>Author: <%= @wiky.user.email %> </p>
+      <p class= "floatleft">Collaborators: </p>
+        <% @collaborators.each do |collaborator| %>
+        <li class="list-group-item list-group-item-success floatleft pastelblue">
+          <%= collaborator.email %>
+        </li>
+        <% end %>
+    </ul>
+  </div>
+</div>
+
+</br>
+
+<div class="list-group">
+  <div class="list-group-item">
+    <h4 class="list-group-item-heading"></h4>
+    <p class="list-group-item-text"><%= raw(@wiky.body) %></p>
+  </div>
+</div>

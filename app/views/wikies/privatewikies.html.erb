@@ -1,0 +1,5 @@
+<h1>Private Wikies</h1>
+<h2>Collaborations</h2>
+<% @collaborations.each do |collaboration| %>
+ <%= link_to "#{collaboration.wiky.title}", wiky_path(collaboration.wiky.id)  %>
+<% end %>
