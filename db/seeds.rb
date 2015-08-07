@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
-test_user = User.new(email: "standard@email.com", password: "helloworld")
+test_user = User.new(email: "standard@example.com", password: "helloworld")
 test_user.skip_confirmation!
 test_user.save
 
@@ -27,7 +27,7 @@ users = User.all
     body:   Faker::Hacker.say_something_smart,
     created_at: rand(2.hours .. 1.year).ago
   )
-  wiky.update_attributes(user_id: users.sample)
+  wiky.update_attributes(user: users.sample)
   wiky.save
 end
 

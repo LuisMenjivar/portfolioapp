@@ -7535,3 +7535,21 @@ input[type="checkbox"]:disabled:checked:after,
 .zeropad {
   padding: 0;
 }
+
+.floatleft {
+    margin: 1px;
+    padding: 1px;
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+}
+.pastelblue {
+  background-color: #d9edf7;
+  color: #31708f;
+}
+
+.padding {
+  padding-left: 15px;
+  padding-right: 15px;
+}

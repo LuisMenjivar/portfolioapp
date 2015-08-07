@@ -25,9 +25,13 @@ feature 'Standard user' do
     puts current_path
   end
 
-  scenario "standard user visits siky show" do 
-    visit('wiky#{@wiky.id}')
+  scenario "standard user visits Wiky show" do 
+    visit('/wiky/#{@wiky.id}')
     expect(page).to have_text(@wiky.user)
     expect(page).to have_text(@wiky.collaboration.user)
+  end
+  
+  scenario "standard user edits a wiky" do 
+    visit('/')
   end
 end
