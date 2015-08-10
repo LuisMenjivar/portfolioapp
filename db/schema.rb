@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150806200536) do
+ActiveRecord::Schema.define(version: 20150810211913) do
 
   create_table "collaborations", force: :cascade do |t|
     t.integer  "wiky_id"
@@ -59,9 +59,9 @@ ActiveRecord::Schema.define(version: 20150806200536) do
     t.string   "title"
     t.text     "body"
     t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.boolean  "public"
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.boolean  "public",     default: true
   end
 
   add_index "wikies", ["user_id"], name: "index_wikies_on_user_id"
