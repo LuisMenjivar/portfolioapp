@@ -1,4 +1,9 @@
 <h1>Private Wikies</h1>
+<% @w =  Wiky.where(user: current_user) %>
+<% @w.each do |wik|  %>
+<p><%= link_to wik.title, wiky_path(wik.id) %></p>
+<% end %>
+
 <h2>Collaborations</h2>
 <% @collaborations.each do |collaboration| %>
  <%= link_to "#{collaboration.wiky.title}", wiky_path(collaboration.wiky.id)  %>
