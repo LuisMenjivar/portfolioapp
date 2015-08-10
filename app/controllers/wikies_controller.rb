@@ -31,7 +31,7 @@ class WikiesController < ApplicationController
     @wiky = Wiky.new
   end
   def create
-    if wiky_params[:public == true]
+    if wiky_params[:public] == "true"
       @existing_wiky = Wiky.find_by("title = ? AND public = ?", wiky_params[:title], true)
       if @existing_wiky.nil?
         wiky = current_user.wikies.new(wiky_params)
@@ -47,7 +47,7 @@ class WikiesController < ApplicationController
         @wiky = Wiky.new(wiky_params)
         render :new
       end
-    else wiky_params[:public] == false
+    else wiky_params[:public] == "false"
       @new_private_wiky = current_user.wikies.new(wiky_params)
       if @new_private_wiky.save
         flash[:notice] = "You successfully created a wiky"
