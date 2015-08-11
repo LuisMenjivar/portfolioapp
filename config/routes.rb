@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :wikies
+  resources :wikies do 
+    resources :collaborations
+  end
   devise_for :users
   root 'home#index'
   resources :todos, except: [:show]
