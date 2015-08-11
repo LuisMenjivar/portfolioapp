@@ -7,6 +7,9 @@ class WikiesController < ApplicationController
     @featured_wiky = Wiky.last
   end
   def privatewikies
+    authenticate_user!
+    @public_wikies = current_user.wikies.where(public: true)
+    @private_wikies = current_user.wikies.where(public: false)
     @collaborations = Collaboration.where(user: current_user)
   end
   def show 
