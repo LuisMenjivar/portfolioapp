@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   get 'privatewikies' => 'wikies#privatewikies'
   get 'search_results' => 'wikies#search_results', as: 'search_results'
   resources :charges, only: [:new, :create]
+  get 'topics/home' => 'topics#home'
   resources :topics
 end 
