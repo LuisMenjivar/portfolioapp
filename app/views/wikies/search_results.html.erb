@@ -1,3 +1,5 @@
 <h1>Seach results for: <b><%= params[:search_keywords] %></b></h1>
-<h3><%= @results.title %></h3>
+<h3 class= "floatleft"><%= @results.title %></h3>[<%= link_to "edit", edit_wiky_path(@results.id) %>]
+</br>
+</br>
 <%= raw(@results.body) %>
