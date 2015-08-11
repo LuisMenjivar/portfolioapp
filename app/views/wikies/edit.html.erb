@@ -1,1 +1,4 @@
 <%= render 'form', legend_text: "edit" %>
+<% if @wiky.public? == false %>
+<%= render :partial => "collaborations/form", :locals => {:@collaborations => @collaborations, :@wiky => @wiky} %><br>
+<% end %>

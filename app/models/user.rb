@@ -5,4 +5,16 @@ class User < ActiveRecord::Base
   has_many :wikies
   has_many :collaborations
   has_many :collaborated_wikies, through: :collaborations, source: "wiky"
+
+  def admin? 
+    role == "admin"
+  end
+
+  def premium?
+    role == "premium"
+  end
+
+  def standard?
+    role == "standard"
+  end
 end

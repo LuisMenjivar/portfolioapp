@@ -11,11 +11,13 @@ class WikiesController < ApplicationController
   end
   def show 
     @wiky = Wiky.find(params[:id])
+    authorize @wiky
     @collaborators = @wiky.collaborators
   end
 
   def edit 
     @wiky = Wiky.find(params[:id])
+    @collaborations = @wiky.collaborations
   end
   def update
     @wiky = Wiky.find(params[:id])
@@ -62,7 +64,7 @@ class WikiesController < ApplicationController
   def search_results
     @wiky = Wiky.find_by("title = ? AND public =  ?", params[:search_keywords], true)
     if @wiky.nil?
-      @new_wiky = Wiky.new(title: params[:search_keywords], body: getwiky(params[:search_keywords]), public: true)
+      @new_wiky = Wiky.new(title: params[:search_keywords], body: getwiky(params[:search_keywords]), public: true, user: User.first)
       @new_wiky.save
       @results = @new_wiky
     else
