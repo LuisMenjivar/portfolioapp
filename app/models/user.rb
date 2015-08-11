@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   has_many :wikies
   has_many :collaborations
   has_many :collaborated_wikies, through: :collaborations, source: "wiky"
-
+  has_many :topics, dependent: :destroy
   def admin? 
     role == "admin"
   end
