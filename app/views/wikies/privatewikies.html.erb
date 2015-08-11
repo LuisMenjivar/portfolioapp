@@ -1,10 +1,21 @@
-<h1>Private Wikies</h1>
-<% @w =  Wiky.where(user: current_user) %>
-<% @w.each do |wik|  %>
-<p><%= link_to wik.title, wiky_path(wik.id) %></p>
-<% end %>
+<h2>Public wikies</h2>
+<% @public_wikies.each do |public_wiky| %>
+ <li class="list-group-item list-group-item-success floatleft pastelblue">
+  <%= link_to "#{public_wiky.title}", wiky_path(public_wiky.id)  %>
+  <% end %>
+ </li>
 
+</br>
+<h2 >Private Wikies</h2>
+<% @private_wikies.each do |private_wiky| %>
+ <li class="list-group-item list-group-item-success floatleft pastelblue">
+  <%= link_to "#{private_wiky.title}", wiky_path(private_wiky.id)  %>
+  <% end %>
+ </li>
+</br>
 <h2>Collaborations</h2>
 <% @collaborations.each do |collaboration| %>
- <%= link_to "#{collaboration.wiky.title}", wiky_path(collaboration.wiky.id)  %>
-<% end %>
+ <li class="list-group-item list-group-item-success floatleft pastelblue">
+  <%= link_to "#{collaboration.wiky.title}", wiky_path(collaboration.wiky.id)  %>
+  <% end %>
+ </li>
