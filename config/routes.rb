@@ -9,5 +9,7 @@ Rails.application.routes.draw do
   get 'search_results' => 'wikies#search_results', as: 'search_results'
   resources :charges, only: [:new, :create]
   get 'topics/home' => 'topics#home'
-  resources :topics
+  resources :topics do 
+    resources :bookmarks, except: [:index]
+  end
 end 

@@ -1,50 +1,9 @@
 <h1>Topics</h1>
-
- <% @topics.each do |topic| %>
-<ul class="list-group col-lg-2"> 
-
-  <li class="list-group-item">
-       <span class="badge">2</span>
-   
-     <%= link_to topic.title, topic_path(topic.id) %>
-    
-  </li>
-</ul>
- <% end %>
-
-
-
-<!-- <div class="row">
-  <div class="col-lg-6">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <span class="badge">14</span>
-        Cras justo odio
-      </li>
-      <li class="list-group-item">
-        <span class="badge">2</span>
-        Dapibus ac facilisis in
-      </li>
-      <li class="list-group-item">
-        <span class="badge">1</span>
-        Morbi leo risus
-      </li>
-    </ul>
-  </div>
-  <div class="col-lg-6">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <span class="badge">14</span>
-        Cras justo odio
-      </li>
-      <li class="list-group-item">
-        <span class="badge">2</span>
-        Dapibus ac facilisis in
-      </li>
-      <li class="list-group-item">
-        <span class="badge">1</span>
-        Morbi leo risus
-      </li>
-    </ul>
-  </div>
-</div> -->
+<% @topics.each do |topic| %>
+  <ul class="list-group col-lg-2"> 
+    <li class="list-group-item">
+      <span class="badge">2</span>
+      <%= link_to topic.title, topic_path(topic.id) %>   
+    </li>
+  </ul>
+<% end %>

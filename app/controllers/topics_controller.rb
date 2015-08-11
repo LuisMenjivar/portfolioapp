@@ -1,17 +1,25 @@
 class TopicsController < ApplicationController
   layout 'topic_layout'
+
   before_action :set_topic, only: [:show, :destroy, :edit, :update]
   def index
+    authenticate_user!
     @topics = current_user.topics
   end
+
   def show
-  
+    @bookmarks = current_user.topics.find(params[:id]).bookmarks
   end
+
   def home
+    authenticate_user!
+    @topic_count = current_user.topics.count
+    # @bookmark_count = current_user.
   end 
+  
   private
   def set_topic
-    @topic = current_user.topics.where(id: params[:id])
+    @topic = Topic.where(user: current_user).find(params[:id])
   end
 
   def topic_params
