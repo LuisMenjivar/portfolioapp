@@ -1,6 +1,10 @@
-<ul class="list-group col-lg-2"> 
-  <li class="list-group-item">
-    <span class="badge" style="color: #ffb300; background-color: rgba(0, 51, 102, 0.9);">2</span>
-    <%= link_to bookmark.url, topic_bookmark_path(bookmark.topic_id, bookmark) %>
-  </li>
-</ul>
+
+    <div class="col-xs-3 col-md-1" style="padding-left: 2px; padding-right: 2px;">
+      <div class="thumbnail">
+        <img src=<%= bookmark.image %> alt="...">
+        <div class="caption">
+          <p>Thumbnail label</p>
+        </div>
+      </div>
+    </div>
+

@@ -1,2 +1,13 @@
-<h2>You Bookmarks </h2>
-<%= render @bookmarks %>
+<div class="row">
+  <% @bookmarks.each do |bookmark| %>
+  <div class="col-xs-3 col-md-1" style="padding-left: 2px; padding-right: 2px;">
+    <div class="thumbnail">
+      <img src=<%= bookmark.image %> alt="...">
+      <div class="caption">
+        <p>Thumbnail label</p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
