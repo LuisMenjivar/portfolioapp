@@ -1,0 +1,9 @@
+<h1>Topics</h1>
+<% @topics.each do |topic| %>
+  <ul class="list-group col-lg-2"> 
+    <li class="list-group-item">
+      <span class="badge"><%= topic.bookmarks.count %></span>
+      <%= link_to topic.title, topic_path(topic.id) %>   
+    </li>
+  </ul>
+<% end %>

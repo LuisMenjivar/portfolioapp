@@ -1,5 +1,4 @@
 class TodosController < ApplicationController
-
   def index
     authenticate_user!
     @todos = current_user.todos.all
