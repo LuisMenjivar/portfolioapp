@@ -1,13 +1,21 @@
-<div class="row">
-  <% @bookmarks.each do |bookmark| %>
-  <div class="col-xs-3 col-md-1" style="padding-left: 2px; padding-right: 2px;">
-    <div class="thumbnail">
-      <img src=<%= bookmark.image %> alt="...">
-      <div class="caption">
-        <p>Thumbnail label</p>
-      </div>
-    </div>
+<% @bookmarks.each do |bookmark| %>
+  <div class="img">
+    <a target="blank" href="<%= bookmark.url %>">
+      <img src="<%= bookmark.image %>" width="110" height="110">
+    </a>
+    <div class="desc">
+      <small>
+        <ul>
+         <div class="text"><li>
+         <%= bookmark.image_file_name %>
+         </li> </div>
+
+
+
+        
+        </ul>
+      </small>
+    </div> 
   </div>
-  <% end %>
-</div>
+<% end %>
 

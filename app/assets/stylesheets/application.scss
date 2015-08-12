@@ -7553,3 +7553,45 @@ input[type="checkbox"]:disabled:checked:after,
   padding-left: 15px;
   padding-right: 15px;
 }
+
+.small{
+  opacity: 0.5;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+
+div.img {
+    margin: 1px;
+    padding: 1px;
+    border: 1px solid gray;
+    height: auto;
+    width: auto;
+    float: left;
+    text-align: center;
+} 
+
+div.desc {
+  text-align: center;
+  font-weight: normal;
+  width: 100px;
+  margin: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+.text {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   line-height: 16px;     /* fallback */
+   max-height: 32px;      /* fallback */
+   -webkit-line-clamp: 1; /* number of lines to show */
+   -webkit-box-orient: vertical;
+}

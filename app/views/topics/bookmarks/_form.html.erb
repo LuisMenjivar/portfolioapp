@@ -1,0 +1,23 @@
+<%= form_for([topic, bookmark]) do |f| %>
+  <% if bookmark.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(bookmark.errors.count, "error") %> prohibited this bookmark from being saved:</h2>
+
+      <ul>
+      <% bookmark.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <div class="field">
+      <%= f.label :url %><br>
+      <%= f.url_field :url, class: 'form-control', placeholder: "Enter Url Here" %>
+    </div>
+    <br>
+    <div class="form-group">
+    <%#= f.submit "Save", class: 'btn btn-success' %>
+    <%= button_tag "save", 'data-disable-with' => "Please wait.." %>
+  </div>
+<% end %>

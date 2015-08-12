@@ -10,6 +10,7 @@ class TopicsController < ApplicationController
   def show
     @topic = Topic.find(params[:id])
     @bookmarks = @topic.bookmarks
+    @bookmark = current_user.bookmarks.new
   end
 
   def home
