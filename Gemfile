@@ -28,6 +28,13 @@ gem "figaro"
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem "pundit"
 gem 'stripe'
+gem "paperclip", "~> 4.2"
+#installed aws-sdk version 1 and 2 
+#"Version 2 of the aws-sdk gem is not backwards compatible."
+#"This allows you to install version 1 and version 2 in the same application." 
+# -> from http://ruby.awsblog.com/post/TxFKSK2QJE6RPZ/Upcoming-Stable-Release-of-AWS-SDK-for-Ruby-Version-2
+gem 'aws-sdk', '~> 2'   
+gem 'aws-sdk-v1' 
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
