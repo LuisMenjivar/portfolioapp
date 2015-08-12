@@ -1,6 +1,6 @@
 class TopicsController < ApplicationController
   layout 'topic_layout'
-
+  before_action :authenticate_user!
   before_action :set_topic, only: [:show, :destroy, :edit, :update]
   def index
     authenticate_user!
@@ -8,7 +8,8 @@ class TopicsController < ApplicationController
   end
 
   def show
-    @bookmarks = current_user.topics.find(params[:id]).bookmarks
+    @topic = Topic.find(params[:id])
+    @bookmarks = @topic.bookmarks
   end
 
   def home

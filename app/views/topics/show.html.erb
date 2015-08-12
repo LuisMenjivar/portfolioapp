@@ -4,17 +4,9 @@
     <div class="input-group">
       <input type="text" class="form-control" placeholder="Search for...">
       <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
+        <%= button_tag "Create", 'data-disable-with' => "Please wait..", class: "btn btn-default" %>
       </span>
     </div><!-- /input-group -->
   </div><!-- /.col-lg-6 -->
 </div><!-- /.row -->
-
-<% @bookmarks.each do |topic| %>
-  <ul class="list-group col-lg-2"> 
-    <li class="list-group-item">
-      <span class="badge">2</span>
-      <%= link_to topic.title, topic_path(topic.id) %>   
-    </li>
-  </ul>
-<% end %>
+<%= render @bookmarks %>

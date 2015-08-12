@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   resources :charges, only: [:new, :create]
   get 'topics/home' => 'topics#home'
   resources :topics do 
-    resources :bookmarks, except: [:index]
+    resources :bookmarks, except: [:index], controller: 'topics/bookmarks'
   end
+  resources :bookmarks, only: [:index]
 end 
