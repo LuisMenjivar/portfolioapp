@@ -5,9 +5,14 @@
   <div class="desc">
     <small>
       <ul>
-       <div class="text"><li>
-       <%= bookmark.image_file_name %>
-       </li> </div>        
+       <div class="text">
+         <li>
+           <%= bookmark.image_file_name %></br>
+         </li> 
+       </div> 
+       <li>
+         <%= link_to "show", topic_bookmark_path(bookmark.topic_id, bookmark), class: "label label-primary"  %>
+       </li>      
       </ul>
     </small>
   </div> 
