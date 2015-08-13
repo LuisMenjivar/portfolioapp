@@ -1,10 +1,15 @@
 source 'https://rubygems.org'
 
 
+group :production do 
+  gem 'pg' #sqlite3 gem is not supported on Heroku.
+  gem 'rails_12factor'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -65,5 +70,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker', '~> 1.4.3'
+  gem 'sqlite3'
 end
 
