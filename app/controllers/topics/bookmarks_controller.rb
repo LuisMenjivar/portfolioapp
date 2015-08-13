@@ -15,6 +15,17 @@ class Topics::BookmarksController < ApplicationController
       flask[:error] = "Error creating bookmark"
     end
   end
+  def destroy
+    @bookmark = Bookmark.find(params[:id])
+    @topic = @bookmark.topic
+    if @bookmark.delete
+      flash[:alert] = "You successfully deleted the bookmark"
+      redirect_to :back
+    else
+      flash[:error] = "error deleting bookmark"
+      redirect_to @topic
+    end
+  end
 
   private
   def bookmark_params

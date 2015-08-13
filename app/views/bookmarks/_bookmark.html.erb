@@ -12,6 +12,7 @@
        </div> 
        <li>
          <%= link_to "show", topic_bookmark_path(bookmark.topic_id, bookmark), class: "label label-primary"  %>
+         <%= link_to "delete", topic_bookmark_path(bookmark.topic_id, bookmark.id), method: :delete, class: "label label-danger"  %>
        </li>      
       </ul>
     </small>
