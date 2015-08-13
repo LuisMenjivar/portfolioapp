@@ -1,6 +1,20 @@
-<ul class="list-group col-lg-2"> 
-  <li class="list-group-item">
-    <span class="badge" style="color: #ffb300; background-color: rgba(0, 51, 102, 0.9);">2</span>
-    <%= link_to bookmark.url, topic_bookmark_path(bookmark.topic_id, bookmark) %>
-  </li>
-</ul>
+<div class="img">
+  <a target="blank" href="<%= bookmark.url %>">
+    <img src="<%= bookmark.image %>" width="110" height="110">
+  </a>
+  <div class="desc">
+    <small>
+      <ul>
+       <div class="text">
+         <li>
+           <%= bookmark.image_file_name %></br>
+         </li> 
+       </div> 
+       <li>
+         <%= link_to "show", topic_bookmark_path(bookmark.topic_id, bookmark), class: "label label-primary"  %>
+         <%= link_to "delete", topic_bookmark_path(bookmark.topic_id, bookmark.id), method: :delete, class: "label label-danger"  %>
+       </li>      
+      </ul>
+    </small>
+  </div> 
+</div>

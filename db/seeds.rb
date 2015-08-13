@@ -32,6 +32,16 @@ users = User.all
   Collaboration.create(user: users.sample, wiky: wiky)
 end
 
+3.times do 
+  topic = test_user.topics.new(title: Faker::Company.name)
+  topic.save
+end
+
+10.times do 
+  bookmark = Bookmark.new(url: Faker::Company.logo, topic_id: rand(1..3))
+  bookmark.save
+end
+
 puts "DATABASE HAS BEEN SEEDED!!"
 puts "#{users.count} Users were created"
 puts "#{Wiky.all.count} Wikiess were created"

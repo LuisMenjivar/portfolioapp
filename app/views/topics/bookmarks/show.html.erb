@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-lg-11">
+    <div class="embed-responsive embed-responsive-16by9">
+      <% if embed_video(@url, 800) %>
+        <%= embed_video(@url, 1100) %>
+      <% else %>
+        <div class="img">
+          <%= link_to image_tag(@bookmark.image), @url %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+
+<h5><b>TITLE:</b> <%= @bookmark.image_file_name %></h5>
+<p>URL: <%= link_to @url, @url %> </p>
+<p>Created: <%= @bookmark.created_at.strftime("%b %d, %Y") %></p>

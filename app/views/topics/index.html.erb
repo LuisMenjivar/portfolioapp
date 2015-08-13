@@ -1,9 +1,16 @@
-<h1>Topics</h1>
+<div class="row">
+  <div class="col-lg-8">
+      <h1>Topics</h1>
+      <%= render partial: 'form', locals: {new_topic: @new_topic}%>
+  </div>
+</div>
 <% @topics.each do |topic| %>
-  <ul class="list-group col-lg-2"> 
-    <li class="list-group-item">
+  <ul class="list-group col-lg-3"> 
+    <li class="list-group-item" >
       <span class="badge"><%= topic.bookmarks.count %></span>
-      <%= link_to topic.title, topic_path(topic.id) %>   
+      <p><%= topic.title %></p>
+      <%= link_to "show", topic_path(topic), class: "label label-primary"  %>
+      <%= link_to "delete", topic_path(topic), method: :delete, class: "label label-danger"  %>
     </li>
   </ul>
 <% end %>

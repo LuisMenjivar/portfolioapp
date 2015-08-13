@@ -1,0 +1,24 @@
+<%= form_for(new_topic) do |f| %>
+  <% if new_topic.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(topic.errors.count, "error") %> prohibited this topic from being saved:</h2>
+
+      <ul>
+      <% topic.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title, class: 'form-control', placeholder: "Enter new title" %>
+  </div><br>
+  <div class="form-group">
+    <%= button_tag "save", 'data-disable-with' => "Please wait..", class: "btn btn-primary" %>
+  </div>
+<% end %>
+
+
+

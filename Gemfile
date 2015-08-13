@@ -1,10 +1,15 @@
 source 'https://rubygems.org'
 
 
+group :production do 
+  gem 'pg' #sqlite3 gem is not supported on Heroku.
+  gem 'rails_12factor'
+end
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -28,6 +33,14 @@ gem "figaro"
 gem 'bootstrap-sass', '~> 3.3.5.1'
 gem "pundit"
 gem 'stripe'
+gem "paperclip", "~> 4.2"
+gem 'embedly', '~> 1.9.1'
+#installed aws-sdk version 1 and 2 
+#"Version 2 of the aws-sdk gem is not backwards compatible."
+#"This allows you to install version 1 and version 2 in the same application." 
+# -> from http://ruby.awsblog.com/post/TxFKSK2QJE6RPZ/Upcoming-Stable-Release-of-AWS-SDK-for-Ruby-Version-2
+gem 'aws-sdk', '~> 2'   
+gem 'aws-sdk-v1' 
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -57,5 +70,6 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'factory_girl_rails'
   gem 'faker', '~> 1.4.3'
+  gem 'sqlite3'
 end
 
