@@ -4,7 +4,8 @@ class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :destroy, :edit, :update]
   def index
     authenticate_user!
-    @topics = current_user.topics
+    @topics = current_user.topics.all
+    @new_topic = current_user.topics.new
   end
 
   def show
@@ -18,6 +19,16 @@ class TopicsController < ApplicationController
     @topic_count = current_user.topics.count
     # @bookmark_count = current_user.
   end 
+  def create
+    @topic = current_user.topics.new(topic_params)
+    if @topic.save
+      flash[:notice] = "You successfully created a new topic"
+      redirect_to :back
+    else
+      flash[:error] = "Error creating topic"
+      render :index
+    end
+  end
   
   private
   def set_topic
