@@ -8,6 +8,15 @@ class TopicsController < ApplicationController
     @new_topic = current_user.topics.new
   end
 
+  def destroy
+    @topic = Topic.find(params[:id])
+    if @topic.destroy
+      redirect_to :back, notice: "you successfully deleted the topic along with the topic's bookmarks"
+    else
+      redirect_to :back, error: "error deleting topic"
+    end
+  end
+
   def show
     @topic = Topic.find(params[:id])
     @bookmarks = @topic.bookmarks
