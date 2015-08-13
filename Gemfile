@@ -41,6 +41,7 @@ gem 'embedly', '~> 1.9.1'
 # -> from http://ruby.awsblog.com/post/TxFKSK2QJE6RPZ/Upcoming-Stable-Release-of-AWS-SDK-for-Ruby-Version-2
 gem 'aws-sdk', '~> 2'   
 gem 'aws-sdk-v1' 
+gem 'httparty', '~> 0.13.5'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
@@ -63,7 +64,6 @@ group :development, :test do
 
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
-  gem 'httparty', '~> 0.13.5'
 
   #Gems added after rails new
   gem 'rspec-rails', '~> 3.0'
