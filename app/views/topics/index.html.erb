@@ -4,11 +4,13 @@
       <%= render partial: 'form', locals: {new_topic: @new_topic}%>
   </div>
 </div>
-<% @topics.each do |topic| %>
-  <ul class="list-group col-lg-3" > 
-    <li class="list-group-item" >
-      <span class="badge"><%= topic.bookmarks.count %></span>
-      <%= link_to topic.title, topic_path(topic.id) %>
-    </li>
-  </ul>
-<% end %>
+
+
+    <% @topics.each do |topic| %>
+      <ul class="list-group col-lg-3"> 
+        <li class="list-group-item" >
+          <span class="badge"><%= topic.bookmarks.count %></span>
+          <%= link_to topic.title, topic_path(topic.id) %>
+        </li>
+      </ul>
+    <% end %>
