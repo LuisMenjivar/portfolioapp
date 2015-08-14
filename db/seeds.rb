@@ -13,6 +13,9 @@ Wiky.delete_all
 Topic.delete_all
 Bookmark.delete_all
 Product.delete_all
+LineItem.delete_all
+Cart.delete_all
+
 
 test_user = User.new(email: "standard@example.com", password: "helloworld")
 test_user.skip_confirmation!
@@ -49,8 +52,8 @@ end
 end
 
 3.times do 
-  Product.create!(title: Faker::Company.bs,
-    description: Faker::Hacker.say_something_smart,
+  Product.create!(title: Faker::Company.name,
+    description: Faker::Lorem.paragraphs(5),
     image_url: Faker::Company.logo,
     price: 19.99)
 end

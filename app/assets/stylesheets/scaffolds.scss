@@ -1,0 +1,132 @@
+.entry {
+  overflow: auto;
+  margin-top: 1em;
+  border-bottom: 1px dotted #77d;
+  min-height: 100px;
+
+  img {
+    width: 80px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    position: absolute;
+    float: left;
+  }
+
+  h3 {
+    font-size: 120%;
+    font-family: sans-serif;
+    margin-left: 100px;
+    margin-top: 0;
+    margin-bottom: 2px;
+    color: #227;
+  }
+
+  p, div.price_line {
+    margin-left: 100px;
+    margin-top: 0.5em; 
+    margin-bottom: 0.8em; 
+  }
+
+  .price {
+    color: #44a;
+    font-weight: bold;
+    margin-right: 3em;
+  }
+}
+
+#banner {
+  background: #EA0721;
+  padding: 10px;
+  border-bottom: 2px solid;
+  font: small-caps 40px/40px "Times New Roman", serif;
+  color: #FFF;
+  text-align: center;
+
+  img {
+    float: left;
+    width: 100px;
+    height: 40px;
+  }
+}
+
+#columns {
+  background: #EA0721;
+
+  #main {
+    margin-left: 17em;
+    padding: 1em;
+    background: white;
+  }
+
+  #side {
+    float: left;
+    padding: 1em 2em;
+    width: 13em;
+    background: #EA0721;
+
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+        a {
+          color: #FFF;
+          font-size: small;
+        }
+      }
+    }
+  }
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table tr td {
+  padding: 5px;
+  vertical-align: top;
+}
+
+.list_image {
+  width:  60px;
+  height: 70px;
+}
+
+.list_description {
+  width: 60%;
+
+  dl {
+    margin: 0;
+  }
+
+  dt {
+    color:        #244;
+    font-weight:  bold;
+    font-size:    larger;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
+.list_actions {
+  font-size:    x-small;
+  text-align:   right;
+  padding-left: 1em;
+}
+
+.list_line_even {
+  background:   #e0f8f8;
+}
+
+.list_line_odd {
+  background:   #f8b0f8;
+}
+
+.item_price, .total_line {
+  text-align: right;
+}
+.total_line .total_cell {
+  font-weight: bold;
+  border-top: 3px solid #595;
+}
