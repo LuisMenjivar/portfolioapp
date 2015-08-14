@@ -7,10 +7,16 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 
+
+User.delete_all
+Wiky.delete_all
+Topic.delete_all
+Bookmark.delete_all
+Product.delete_all
+
 test_user = User.new(email: "standard@example.com", password: "helloworld")
 test_user.skip_confirmation!
 test_user.save
-
 5.times do
   user = User.new(
     email:    Faker::Internet.email,
@@ -42,7 +48,18 @@ end
   bookmark.save
 end
 
+3.times do 
+  Product.create!(title: Faker::Company.bs,
+    description: Faker::Hacker.say_something_smart,
+    image_url: Faker::Company.logo,
+    price: 19.99)
+end
+
+
+
 puts "DATABASE HAS BEEN SEEDED!!"
 puts "#{users.count} Users were created"
 puts "#{Wiky.all.count} Wikiess were created"
 puts "#{Collaboration.all.count} Collaborations were created"
+puts "#{Bookmark.all.count} Bookmarks were created" 
+puts "#{Product.all.count} products were created"

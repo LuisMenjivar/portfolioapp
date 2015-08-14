@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150813211337) do
+ActiveRecord::Schema.define(version: 20150814045943) do
 
   create_table "bookmarks", force: :cascade do |t|
     t.string   "url"
@@ -36,6 +36,15 @@ ActiveRecord::Schema.define(version: 20150813211337) do
   add_index "collaborations", ["user_id", "wiky_id"], name: "index_collaborations_on_user_id_and_wiky_id", unique: true
   add_index "collaborations", ["user_id"], name: "index_collaborations_on_user_id"
   add_index "collaborations", ["wiky_id"], name: "index_collaborations_on_wiky_id"
+
+  create_table "products", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.string   "image_url"
+    t.decimal  "price",       precision: 8, scale: 2
+    t.datetime "created_at",                          null: false
+    t.datetime "updated_at",                          null: false
+  end
 
   create_table "todos", force: :cascade do |t|
     t.string   "description"
