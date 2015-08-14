@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'store/index'
-
   resources :products
   resources :wikies do 
     resources :collaborations
