@@ -11,9 +11,11 @@
         <li><a href="http://www..../news">News</a></li>
         <li><a href="http://www..../contact">Contact</a></li>
       </ul>
-      <div id="cart">
-        <%= render @cart if controller_name == "store" && action_name == "index" %>
-      </div>
+      <% if @cart %>
+        <%= hide_div(@cart.line_items.empty?, id: 'cart') do %>
+          <%= render @cart if controller_name == "store" && action_name == "index" %>
+         <% end %>
+      <% end %>
     </div>
     <div id="main">
       <%= content_for?(:product_content) ? yield(:product_content) : yield %>
