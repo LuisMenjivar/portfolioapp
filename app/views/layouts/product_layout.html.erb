@@ -11,6 +11,9 @@
         <li><a href="http://www..../news">News</a></li>
         <li><a href="http://www..../contact">Contact</a></li>
       </ul>
+      <div id="cart">
+        <%= render @cart if controller_name == "store" && action_name == "index" %>
+      </div>
     </div>
     <div id="main">
       <%= content_for?(:product_content) ? yield(:product_content) : yield %>
