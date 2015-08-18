@@ -43,6 +43,7 @@ gem 'embedly', '~> 1.9.1'
 gem 'aws-sdk', '~> 2'   
 gem 'aws-sdk-v1' 
 gem 'httparty', '~> 0.13.5'
+gem 'faker', '~> 1.4.3'
 
 gem 'sdoc', '~> 0.4.0', group: :doc
 
