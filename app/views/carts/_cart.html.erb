@@ -8,3 +8,4 @@
 </table>
 <%= button_to 'Empty cart', cart, method: :delete,
     data: { confirm: 'Are you sure?'} , class: "btn btn-danger" %>
+<%= button_to 'checkout ', new_order_path, method: :get, class: "btn btn-warning" %>
