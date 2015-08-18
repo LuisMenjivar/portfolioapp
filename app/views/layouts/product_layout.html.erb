@@ -1,0 +1,25 @@
+<% content_for :content do %>
+  <div id="banner">
+    <%= image_tag("http://i.ebayimg.com/00/s/NDY1WDcxNw==/z/WGoAAOSwNSxUyz36/$_35.JPG") %>
+    <%= @page_title || "Online Store" %>
+  </div>
+  <div id="columns">
+    <div id="side">
+      <ul>
+        <li><a href="http://www....">Home</a></li>
+        <li><a href="http://www..../faq">Questions</a></li>
+        <li><a href="http://www..../news">News</a></li>
+        <li><a href="http://www..../contact">Contact</a></li>
+      </ul>
+      <% if @cart %>
+        <%= hide_div(@cart.line_items.empty?, id: 'cart') do %>
+          <%= render @cart if controller_name == "store" && action_name == "index" %>
+         <% end %>
+      <% end %>
+    </div>
+    <div id="main">
+      <%= content_for?(:product_content) ? yield(:product_content) : yield %>
+      <% end %>
+    </div>
+  </div>
+<%= render template: "layouts/application" %>
