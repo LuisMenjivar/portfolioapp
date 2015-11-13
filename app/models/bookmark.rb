@@ -1,4 +1,6 @@
 class Bookmark < ActiveRecord::Base
+  validates :url, length: {maximum: 3}
+  validates :url, presence: true
   before_save :set_image
   belongs_to :topic
   has_attached_file :image, :styles => { :thumb => "100x100>" }

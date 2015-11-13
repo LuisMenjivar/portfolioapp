@@ -7595,3 +7595,11 @@ div.desc {
    -webkit-line-clamp: 1; /* number of lines to show */
    -webkit-box-orient: vertical;
 }
+
+.what {
+  // clear: both;
+  display:block;
+  margin-right: auto;
+  margin-left: auto;
+  align: center;
+}

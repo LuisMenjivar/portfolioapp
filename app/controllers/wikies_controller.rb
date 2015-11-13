@@ -36,20 +36,20 @@ class WikiesController < ApplicationController
     @wiky = Wiky.new
   end
   def create
+    # @wiky = Wiky.new(wiky_params)
+    @wiky = current_user.wikies.new(wiky_params)
     if wiky_params[:public] == "true"
       @existing_wiky = Wiky.find_by("title = ? AND public = ?", wiky_params[:title], true)
       if @existing_wiky.nil?
-        wiky = current_user.wikies.new(wiky_params)
-        if  wiky.save
+        if  @wiky.save
           flash[:notice] = "You successfully created a wiky"
           redirect_to [wiky]
         else
-          flash[:error] = "Error creating Wiky"
-          redirect_to :new
+          100.times do puts @wiky.errors.any? end
+          render :new
         end
       else
         flash[:error] = "A public wiky with this title already exists"
-        @wiky = Wiky.new(wiky_params)
         render :new
       end
     else wiky_params[:public] == "false"
@@ -58,7 +58,7 @@ class WikiesController < ApplicationController
         flash[:notice] = "You successfully created a wiky"
         redirect_to [@new_private_wiky]
       else
-        flash[:error] = "Error creating Wiky"
+        flash[:error] = "Error creatinsdfafdg Wiky"
         @wiky = Wiky.new(wiky_params)
         render :new
       end
