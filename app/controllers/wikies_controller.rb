@@ -43,7 +43,7 @@ class WikiesController < ApplicationController
       if @existing_wiky.nil?
         if  @wiky.save
           flash[:notice] = "You successfully created a wiky"
-          redirect_to [wiky]
+          redirect_to @wiky
         else
           100.times do puts @wiky.errors.any? end
           render :new
