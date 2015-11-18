@@ -1,5 +1,4 @@
 class Bookmark < ActiveRecord::Base
-  validates :url, length: {maximum: 3}
   validates :url, presence: true
   before_save :set_image
   belongs_to :topic
