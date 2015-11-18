@@ -11,7 +11,7 @@ class Bookmark < ActiveRecord::Base
     if embedly_results.images.first
       self.image = embedly_results.images.first['url']
     else
-      self.image = "http://cdn.meme.am/instances/500x/11516402.jpg"
+      self.image = "http://bookmarkbucket.s3.amazonaws.com/bookmarks/images/000/000/182/original/Y-U-NO.png?1447821098"
     end 
     self.image_file_name = embedly_results.title if !embedly_results.title.nil? 
   end
